@@ -1,0 +1,40 @@
+{
+  "name": "rollup-plugin-glslify",
+  "version": "1.0.0",
+  "description": "Import GLSL strings with glslify",
+  "homepage": "https://github.com/pschroen/rollup-plugin-glslify#readme",
+  "keywords": [
+    "rollup",
+    "plugin",
+    "glsl",
+    "glslify",
+    "shaders"
+  ],
+  "author": "Patrick Schroen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pschroen/rollup-plugin-glslify"
+  },
+  "bugs": {
+    "url": "https://github.com/pschroen/rollup-plugin-glslify/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/index.js",
+    "lint": "eslint . || exit 0"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "glslify": "^6.1.0",
+    "rollup-pluginutils": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "glsl-noise": "0.0.0",
+    "rollup": "^0.52.0",
+    "tape": "^4.8.0"
+  }
+}
