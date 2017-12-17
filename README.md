@@ -29,22 +29,35 @@ import glslify from 'rollup-plugin-glslify';
 export default {
     // ...
     plugins: [
-        glslify({
-            // Default
-            include: [
-                '**/*.vs',
-                '**/*.fs',
-                '**/*.glsl',
-                '**/*.vert',
-                '**/*.frag'
-            ],
-
-            // Undefined by default
-            exclude: 'node_modules/**'
-        })
+        glslify({ basedir: 'src/shaders' })
     ]
 };
 ```
+
+
+## Options
+
+```js
+glslify(options)
+```
+
+```js
+{
+    // Default
+    include: [
+        '**/*.vs',
+        '**/*.fs',
+        '**/*.vert',
+        '**/*.frag',
+        '**/*.glsl'
+    ],
+
+    // Undefined by default
+    exclude: 'node_modules/**'
+}
+```
+
+[glslify API options](https://github.com/glslify/glslify#module-api)
 
 
 ## Changelog

@@ -12,9 +12,9 @@ module.exports = function glslify(userOptions = {}) {
         include: [
             '**/*.vs',
             '**/*.fs',
-            '**/*.glsl',
             '**/*.vert',
-            '**/*.frag'
+            '**/*.frag',
+            '**/*.glsl'
         ]
     }, userOptions);
 
