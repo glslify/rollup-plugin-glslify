@@ -57,7 +57,7 @@ glslify(options)
 }
 ```
 
-[glslify API options](https://github.com/glslify/glslify#module-api)
+[glslify API options](https://github.com/glslify/glslify#var-src--glslcompilesrc-opts)
 
 
 ## Changelog
