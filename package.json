@@ -32,9 +32,9 @@
     "rollup-pluginutils": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^4.15.0",
+    "eslint": "^4.16.0",
     "glsl-noise": "0.0.0",
-    "rollup": "^0.54.0",
+    "rollup": "^0.55.1",
     "tape": "^4.8.0"
   }
 }
