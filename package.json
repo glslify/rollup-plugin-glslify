@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-glslify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Import GLSL strings with glslify",
   "homepage": "https://github.com/pschroen/rollup-plugin-glslify#readme",
   "keywords": [
