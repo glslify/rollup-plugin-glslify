@@ -19,14 +19,14 @@ module.exports = function glslify(userOptions = {}) {
         ]
     }, userOptions);
 
-    const basedir = options.basedir;
-
     const filter = createFilter(options.include, options.exclude);
 
     return {
         transform(code, id) {
             if (!filter(id)) return;
-            options.basedir = basedir || dirname(id);
+
+            options.basedir = options.basedir || dirname(id);
+
             return {
                 code: `export default ${JSON.stringify(compile(code, options))}; // eslint-disable-line`,
                 map: { mappings: '' }
