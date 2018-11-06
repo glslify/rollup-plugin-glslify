@@ -28,13 +28,13 @@
     "node": ">=6.9.0"
   },
   "dependencies": {
-    "glslify": "^6.3.1",
-    "rollup-pluginutils": "^2.3.1"
+    "glslify": "^7.0.0",
+    "rollup-pluginutils": "^2.3.3"
   },
   "devDependencies": {
-    "eslint": "^5.5.0",
+    "eslint": "^5.8.0",
     "glsl-noise": "0.0.0",
-    "rollup": "^0.65.2",
+    "rollup": "^0.67.0",
     "tape": "^4.9.1"
   }
 }
