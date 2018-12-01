@@ -1,9 +1,8 @@
 # rollup-plugin-glslify
-[![Build Status](https://travis-ci.org/pschroen/rollup-plugin-glslify.svg)]()
-[![Latest NPM release](https://img.shields.io/npm/v/rollup-plugin-glslify.svg)]()
-[![License](https://img.shields.io/npm/l/rollup-plugin-glslify.svg)]()
-[![Dependencies](https://img.shields.io/david/pschroen/rollup-plugin-glslify.svg)]()
-[![Dev Dependencies](https://img.shields.io/david/dev/pschroen/rollup-plugin-glslify.svg)]()
+[![NPM Package][npm]][npm-url]
+[![Build Status][build-status]][build-status-url]
+[![Dependencies][dependencies]][dependencies-url]
+[![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 
 Import GLSL strings with [glslify](https://github.com/glslify/glslify) (a node.js-style module system for GLSL).
 
@@ -12,13 +11,11 @@ import frag from './shaders/frag.glsl';
 console.log(frag);
 ```
 
-
 ## Installation
 
 ```bash
 npm install --save-dev rollup-plugin-glslify
 ```
-
 
 ## Usage
 
@@ -33,7 +30,6 @@ export default {
     ]
 };
 ```
-
 
 ## Options
 
@@ -59,12 +55,20 @@ glslify(options)
 
 [glslify API options](https://github.com/glslify/glslify#var-src--glslcompilesrc-opts)
 
-
 ## Changelog
 
 * [Releases](https://github.com/pschroen/rollup-plugin-glslify/releases)
 
-
 ## License
 
 Released under the [MIT license](LICENSE).
+
+
+[npm]: https://img.shields.io/npm/v/rollup-plugin-glslify.svg
+[npm-url]: https://www.npmjs.com/package/rollup-plugin-glslify
+[build-status]: https://travis-ci.org/pschroen/rollup-plugin-glslify.svg
+[build-status-url]: https://travis-ci.org/pschroen/rollup-plugin-glslify
+[dependencies]: https://img.shields.io/david/pschroen/rollup-plugin-glslify.svg
+[dependencies-url]: https://david-dm.org/pschroen/rollup-plugin-glslify
+[dev-dependencies]: https://img.shields.io/david/dev/pschroen/rollup-plugin-glslify.svg
+[dev-dependencies-url]: https://david-dm.org/pschroen/rollup-plugin-glslify?type=dev
