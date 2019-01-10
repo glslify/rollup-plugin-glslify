@@ -9,7 +9,7 @@ test('node string', assert => rollup.rollup({
     input: 'fixtures/basic.js',
     plugins: [ glslify() ]
 }).then(bundle => bundle.generate({ format: 'es' })).then(generated => {
-    assert.true(~generated.code.indexOf('taylorInvSqrt'));
+    assert.true(~generated.output[0].code.indexOf('taylorInvSqrt'));
     assert.end();
 }).catch(err => {
     assert.error(err);
