@@ -57,7 +57,7 @@ glslify(options)
 
 ## Changelog
 
-* [Releases](https://github.com/pschroen/rollup-plugin-glslify/releases)
+* [Releases](https://github.com/glslify/rollup-plugin-glslify/releases)
 
 ## License
 
@@ -66,9 +66,9 @@ Released under the [MIT license](LICENSE).
 
 [npm]: https://img.shields.io/npm/v/rollup-plugin-glslify.svg
 [npm-url]: https://www.npmjs.com/package/rollup-plugin-glslify
-[build-status]: https://travis-ci.org/pschroen/rollup-plugin-glslify.svg
-[build-status-url]: https://travis-ci.org/pschroen/rollup-plugin-glslify
-[dependencies]: https://img.shields.io/david/pschroen/rollup-plugin-glslify.svg
-[dependencies-url]: https://david-dm.org/pschroen/rollup-plugin-glslify
-[dev-dependencies]: https://img.shields.io/david/dev/pschroen/rollup-plugin-glslify.svg
-[dev-dependencies-url]: https://david-dm.org/pschroen/rollup-plugin-glslify?type=dev
+[build-status]: https://travis-ci.org/glslify/rollup-plugin-glslify.svg
+[build-status-url]: https://travis-ci.org/glslify/rollup-plugin-glslify
+[dependencies]: https://img.shields.io/david/glslify/rollup-plugin-glslify.svg
+[dependencies-url]: https://david-dm.org/glslify/rollup-plugin-glslify
+[dev-dependencies]: https://img.shields.io/david/dev/glslify/rollup-plugin-glslify.svg
+[dev-dependencies-url]: https://david-dm.org/glslify/rollup-plugin-glslify?type=dev
