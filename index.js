@@ -25,10 +25,12 @@ module.exports = function glslify(userOptions = {}) {
         transform(code, id) {
             if (!filter(id)) return;
 
-            options.basedir = options.basedir || dirname(id);
+            const fileOptions = Object.assign({
+                basedir: dirname(id)
+            }, options);
 
             return {
-                code: `export default ${JSON.stringify(compile(code, options))}; // eslint-disable-line`,
+                code: `export default ${JSON.stringify(compile(code, fileOptions))}; // eslint-disable-line`,
                 map: { mappings: '' }
             };
         }
