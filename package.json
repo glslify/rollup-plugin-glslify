@@ -21,8 +21,9 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "node ./test/index.js",
-    "lint": "eslint . || exit 0"
+    "travis": "npm run lint && npm test"
   },
   "dependencies": {
     "glslify": "^7.0.0",
