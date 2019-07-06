@@ -24,17 +24,14 @@
     "test": "node ./test/index.js",
     "lint": "eslint . || exit 0"
   },
-  "engines": {
-    "node": ">=6.9.0"
-  },
   "dependencies": {
     "glslify": "^7.0.0",
-    "rollup-pluginutils": "^2.8.0"
+    "rollup-pluginutils": "^2.8.1"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
+    "eslint": "^6.0.1",
     "glsl-noise": "0.0.0",
-    "rollup": "^1.13.1",
-    "tape": "^4.10.2"
+    "rollup": "^1.16.6",
+    "tape": "^4.11.0"
   }
 }
