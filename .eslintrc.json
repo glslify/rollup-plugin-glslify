@@ -5,6 +5,7 @@
   },
   "extends": "eslint:recommended",
   "parserOptions": {
+    "ecmaVersion": 8,
     "sourceType": "module"
   },
   "rules": {
@@ -26,6 +27,10 @@
       "always"
     ],
     "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "object-shorthand": [
       "error",
       "always"
     ],
