@@ -27,12 +27,12 @@
   },
   "dependencies": {
     "glslify": "^7.0.0",
-    "rollup-pluginutils": "^2.8.1"
+    "rollup-pluginutils": "^2.8.2"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
+    "eslint": "^6.6.0",
     "glsl-noise": "0.0.0",
-    "rollup": "^1.16.6",
+    "rollup": "^1.26.0",
     "tape": "^4.11.0"
   }
 }
