@@ -1,4 +1,5 @@
 # rollup-plugin-glslify
+
 [![NPM Package][npm]][npm-url]
 [![Build Status][build-status]][build-status-url]
 [![Dependencies][dependencies]][dependencies-url]
@@ -13,7 +14,7 @@ console.log(frag);
 
 ## Installation
 
-```bash
+```sh
 npm install --save-dev rollup-plugin-glslify
 ```
 
@@ -26,7 +27,7 @@ import glslify from 'rollup-plugin-glslify';
 export default {
     // ...
     plugins: [
-        glslify({ basedir: 'src/shaders' })
+        glslify()
     ]
 };
 ```
@@ -49,7 +50,10 @@ glslify(options)
     ],
 
     // Undefined by default
-    exclude: 'node_modules/**'
+    exclude: 'node_modules/**',
+
+    // Compress shader by default using logic from rollup-plugin-glsl
+    compress: true
 }
 ```
 
@@ -62,6 +66,10 @@ glslify(options)
 ## License
 
 Released under the [MIT license](LICENSE).
+
+## See also
+
+* [rollup-plugin-glsl](https://github.com/vwochnik/rollup-plugin-glsl)
 
 
 [npm]: https://img.shields.io/npm/v/rollup-plugin-glslify.svg

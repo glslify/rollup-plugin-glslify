@@ -8,6 +8,24 @@ const { dirname } = require('path');
 const { createFilter } = require('rollup-pluginutils');
 const { compile } = require('glslify');
 
+function compressShader(code) {
+    let needNewline = false;
+    return code.replace(/\\(?:\r\n|\n\r|\n|\r)|\/\*.*?\*\/|\/\/(?:\\(?:\r\n|\n\r|\n|\r)|[^\n\r])*/g, '').split(/\n+/).reduce((result, line) => {
+        line = line.trim().replace(/\s{2,}|\t/, ' ');
+        if (line.charAt(0) === '#') {
+            if (needNewline) {
+                result.push('\n');
+            }
+            result.push(line, '\n');
+            needNewline = false;
+        } else {
+            result.push(line.replace(/\s*({|}|=|\*|,|\+|\/|>|<|&|\||\[|\]|\(|\)|-|!|;)\s*/g, '$1'));
+            needNewline = true;
+        }
+        return result;
+    }, []).join('').replace(/\n+/g, '\n');
+}
+
 module.exports = function glslify(userOptions = {}) {
     const options = Object.assign({
         include: [
@@ -22,6 +40,8 @@ module.exports = function glslify(userOptions = {}) {
     const filter = createFilter(options.include, options.exclude);
 
     return {
+        name: 'glslify',
+
         transform(code, id) {
             if (!filter(id)) return;
 
@@ -29,8 +49,14 @@ module.exports = function glslify(userOptions = {}) {
                 basedir: dirname(id)
             }, options);
 
+            code = compile(code, fileOptions);
+
+            if (options.compress !== false) {
+                code = compressShader(code);
+            }
+
             return {
-                code: `export default ${JSON.stringify(compile(code, fileOptions))}; // eslint-disable-line`,
+                code: `export default ${JSON.stringify(code)}; // eslint-disable-line`,
                 map: { mappings: '' }
             };
         }
