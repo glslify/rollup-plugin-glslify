@@ -10,7 +10,7 @@ const { compile } = require('glslify');
 
 function compressShader(code) {
     let needNewline = false;
-    return code.replace(/\\(?:\r\n|\n\r|\n|\r)|\/\*.*?\*\/|\/\/(?:\\(?:\r\n|\n\r|\n|\r)|[^\n\r])*/g, '').split(/\n+/).reduce((result, line) => {
+    return code.replace(/\\(?:\r\n|\n\r|\n|\r)|\/\*.*?\*\/|\/\/(?:\\(?:\r\n|\n\r|\n|\r)|[^\n\r])*/gs, '').split(/\n+/).reduce((result, line) => {
         line = line.trim().replace(/\s{2,}|\t/, ' ');
         if (line.charAt(0) === '#') {
             if (needNewline) {
