@@ -26,13 +26,13 @@
     "travis": "npm run lint && npm test"
   },
   "dependencies": {
-    "glslify": "^7.0.0",
+    "glslify": "^7.1.1",
     "rollup-pluginutils": "^2.8.2"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.32.0",
     "glsl-noise": "0.0.0",
-    "rollup": "^2.0.6",
-    "tape": "^4.13.2"
+    "rollup": "^2.58.0",
+    "tape": "^5.3.1"
   }
 }
