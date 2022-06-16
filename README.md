@@ -18,10 +18,16 @@ console.log(frag);
 npm install --save-dev rollup-plugin-glslify
 ```
 
+OR
+
+```sh
+yarn add -D rollup-plugin-glslify
+```
+
 ## Usage
 
 ```js
-// rollup.config.js
+// rollup.config.js OR vite.config.js
 import glslify from 'rollup-plugin-glslify';
 
 export default {
@@ -52,8 +58,12 @@ glslify(options)
     // Undefined by default
     exclude: 'node_modules/**',
 
-    // Compress shader by default using logic from rollup-plugin-glsl
-    compress: true
+    // Do not perform compression using logic from rollup-plugin-glsl (enabled by default)
+    compress: false
+
+    // `compress` option also accepts a function with its first argument
+    // being the string containing the glsified shader code. 
+    // The function is expected to return a string (or object) - the compressed shader
 }
 ```
 
