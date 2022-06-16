@@ -63,7 +63,7 @@ glslify(options)
 
     // `compress` option also accepts a function with its first argument
     // being the string containing the glsified shader code. 
-    // The function is expected to return a string - the compressed shader
+    // The function is expected to return a string (or object) - the compressed shader
 }
 ```
 
