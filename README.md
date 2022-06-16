@@ -61,7 +61,9 @@ glslify(options)
     // Do not perform compression using logic from rollup-plugin-glsl (enabled by default)
     compress: false
 
-    // `compress` option also accepts a function with its first argument being the string containing the glsified shader code. The function is expected to return a string - the compressed shader
+    // `compress` option also accepts a function with its first argument
+    // being the string containing the glsified shader code. 
+    // The function is expected to return a string - the compressed shader
 }
 ```
 
