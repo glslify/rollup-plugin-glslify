@@ -1,5 +1,5 @@
 /**
- * @author Patrick Schroen / https://github.com/pschroen
+ * @author pschroen / https://ufo.ai/
  */
 
 'use strict';

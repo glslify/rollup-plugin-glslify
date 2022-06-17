@@ -10,7 +10,7 @@
     "glslify",
     "shaders"
   ],
-  "author": "Patrick Schroen",
+  "author": "pschroen",
   "repository": {
     "type": "git",
     "url": "https://github.com/glslify/rollup-plugin-glslify"
