@@ -37,6 +37,10 @@
     "key-spacing": [
       "error",
       { "mode": "minimum" }
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
     ]
   }
 }

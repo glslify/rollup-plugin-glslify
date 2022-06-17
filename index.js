@@ -37,7 +37,7 @@ module.exports = function glslify(userOptions = {}) {
                 '**/*.vert',
                 '**/*.frag',
                 '**/*.glsl'
-            ],
+            ]
         },
         userOptions
     );
@@ -52,7 +52,7 @@ module.exports = function glslify(userOptions = {}) {
 
             const fileOptions = Object.assign(
                 {
-                    basedir: dirname(id),
+                    basedir: dirname(id)
                 },
                 options
             );
@@ -67,8 +67,8 @@ module.exports = function glslify(userOptions = {}) {
 
             return {
                 code: `export default ${JSON.stringify(code)}; // eslint-disable-line`,
-                map: { mappings: '' },
+                map: { mappings: '' }
             };
-        },
+        }
     };
 };
