@@ -22,8 +22,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "node ./test/index.js",
-    "travis": "npm run lint && npm test"
+    "test": "node ./test/index.js"
   },
   "dependencies": {
     "glslify": "^7.1.1",
