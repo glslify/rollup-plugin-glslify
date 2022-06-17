@@ -13,19 +13,17 @@ console.log(frag);
 ## Installation
 
 ```sh
-npm install --save-dev rollup-plugin-glslify
-```
+npm i -D rollup-plugin-glslify
 
-OR
+# or
 
-```sh
 yarn add -D rollup-plugin-glslify
 ```
 
 ## Usage
 
 ```js
-// rollup.config.js OR vite.config.js
+// rollup.config.js
 import glslify from 'rollup-plugin-glslify';
 
 export default {
@@ -56,11 +54,11 @@ glslify(options)
     // Undefined by default
     exclude: 'node_modules/**',
 
-    // Do not perform compression using logic from rollup-plugin-glsl (enabled by default)
-    compress: false
+    // Enabled by default
+    compress: true
 
-    // `compress` option also accepts a function with its first argument
-    // being the string containing the glsified shader code. 
+    // The compress option also accepts a function with its first argument
+    // being the string containing the glslified shader code.
     // The function is expected to return a string (or object) - the compressed shader
 }
 ```
@@ -74,10 +72,6 @@ glslify(options)
 ## License
 
 Released under the [MIT license](LICENSE).
-
-## See also
-
-* [rollup-plugin-glsl](https://github.com/vwochnik/rollup-plugin-glsl)
 
 
 [npm]: https://img.shields.io/npm/v/rollup-plugin-glslify.svg
