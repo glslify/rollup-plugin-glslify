@@ -20,7 +20,7 @@ test('compressed', assert => rollup.rollup({
 
 test('compressed | custom function', assert => rollup.rollup({
     input: 'fixtures/basic.js',
-    plugins: [glslify({ compress: (code) => code + '\n\n// test custom function' })]
+    plugins: [glslify({ compress: code => code + '\n\n// test custom function' })]
 }).then(bundle => bundle.generate({ format: 'es' })).then(generated => {
     const code = generated.output[0].code;
     assert.true(code.includes('// Description'));

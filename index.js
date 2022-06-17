@@ -9,45 +9,33 @@ const { createFilter } = require('rollup-pluginutils');
 const { compile } = require('glslify');
 
 function compressShader(code) {
+    // From https://github.com/vwochnik/rollup-plugin-glsl
+
     let needNewline = false;
-    return code
-        .replace(
-            /\\(?:\r\n|\n\r|\n|\r)|\/\*.*?\*\/|\/\/(?:\\(?:\r\n|\n\r|\n|\r)|[^\n\r])*/gs, 
-            ''
-        )
-        .split(/\n+/)
-        .reduce((result, line) => {
-            line = line
-                .trim()
-                .replace(/\s{2,}|\t/, ' ');
-            if (line.charAt(0) === '#') {
-                if (needNewline) {
-                    result.push('\n');
-                }
-                result.push(line, '\n');
-                needNewline = false;
-            } else {
-                result.push(
-                    line.replace(
-                        /\s*({|}|=|\*|,|\+|\/|>|<|&|\||\[|\]|\(|\)|-|!|;)\s*/g, '$1'
-                    )
-                );
-                needNewline = true;
+    return code.replace(/\\(?:\r\n|\n\r|\n|\r)|\/\*.*?\*\/|\/\/(?:\\(?:\r\n|\n\r|\n|\r)|[^\n\r])*/gs, '').split(/\n+/).reduce((result, line) => {
+        line = line.trim().replace(/\s{2,}|\t/, ' ');
+        if (line.charAt(0) === '#') {
+            if (needNewline) {
+                result.push('\n');
             }
-            return result;
-        }, [])
-        .join('')
-        .replace(/\n+/g, '\n');
+            result.push(line, '\n');
+            needNewline = false;
+        } else {
+            result.push(line.replace(/\s*({|}|=|\*|,|\+|\/|>|<|&|\||\[|\]|\(|\)|-|!|;)\s*/g, '$1'));
+            needNewline = true;
+        }
+        return result;
+    }, []).join('').replace(/\n+/g, '\n');
 }
 
 module.exports = function glslify(userOptions = {}) {
     const options = Object.assign(
         {
             include: [
-                '**/*.vs', 
-                '**/*.fs', 
-                '**/*.vert', 
-                '**/*.frag', 
+                '**/*.vs',
+                '**/*.fs',
+                '**/*.vert',
+                '**/*.frag',
                 '**/*.glsl'
             ],
         },
