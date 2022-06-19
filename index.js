@@ -9,7 +9,8 @@ const { createFilter } = require('rollup-pluginutils');
 const { compile } = require('glslify');
 
 function compressShader(code) {
-    // From https://github.com/vwochnik/rollup-plugin-glsl
+    // Based on https://github.com/vwochnik/rollup-plugin-glsl
+    // Modified to remove multiline comments. See #16
 
     let needNewline = false;
     return code.replace(/\\(?:\r\n|\n\r|\n|\r)|\/\*.*?\*\/|\/\/(?:\\(?:\r\n|\n\r|\n|\r)|[^\n\r])*/gs, '').split(/\n+/).reduce((result, line) => {
