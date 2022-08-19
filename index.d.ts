@@ -8,6 +8,6 @@ interface Options {
   compress?: boolean | ((code: string) => string | Record<any, any>);
 }
 
-const glsify: (options: Options) => Plugin;
+export const glsify: (options: Options) => Plugin;
 
 export default glsify;
