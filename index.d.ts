@@ -2,12 +2,12 @@ import { createFilter } from "rollup-pluginutils";
 import { Plugin } from "rollup";
 
 interface Options {
-  include?: Parameters<typeof createFilter>[0];
-  exclude?: Parameters<typeof createFilter>[1];
+  include: Parameters<typeof createFilter>[0];
+  exclude: Parameters<typeof createFilter>[1];
 
-  compress?: boolean | ((code: string) => string | Record<any, any>);
+  compress: boolean | ((code: string) => string | Record<any, any>);
 }
 
-const glsify: (options: Options) => Plugin;
+declare const glslify: (options?: Partial<Options>) => Plugin;
 
-export default glsify;
+export default glslify;
