@@ -19,6 +19,7 @@
     "url": "https://github.com/glslify/rollup-plugin-glslify/issues"
   },
   "license": "MIT",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
