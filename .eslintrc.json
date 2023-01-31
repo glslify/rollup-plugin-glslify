@@ -1,46 +1,21 @@
 {
   "env": {
     "node": true,
-    "es6": true
+    "es2022": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 13,
     "sourceType": "module"
   },
   "rules": {
-    "indent": [
-      "error",
-      4,
-      { "SwitchCase": 1 }
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
-    "object-shorthand": [
-      "error",
-      "always"
-    ],
-    "key-spacing": [
-      "error",
-      { "mode": "minimum" }
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ]
+    "comma-dangle": ["error", "never"],
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    "linebreak-style": ["error", "unix"],
+    "object-curly-spacing": ["error", "always"],
+    "object-shorthand":  ["error", "always"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
   }
 }

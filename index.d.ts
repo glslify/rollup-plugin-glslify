@@ -1,5 +1,5 @@
-import { createFilter } from "rollup-pluginutils";
-import { Plugin } from "rollup";
+import { createFilter } from '@rollup/pluginutils';
+import { Plugin } from 'rollup';
 
 interface Options {
   include: Parameters<typeof createFilter>[0];

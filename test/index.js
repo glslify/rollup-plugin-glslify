@@ -1,46 +1,44 @@
-const rollup = require('rollup');
-const test = require('tape');
+import { rollup } from 'rollup';
+import test from 'ava';
 
-const glslify = require('../');
+import glslify from '../index.js';
 
-process.chdir('test');
+test('compressed', async t => {
+    const bundle = await rollup({
+        input: 'test/fixtures/basic.js',
+        plugins: [glslify()]
+    });
 
-test('compressed', assert => rollup.rollup({
-    input: 'fixtures/basic.js',
-    plugins: [glslify()]
-}).then(bundle => bundle.generate({ format: 'es' })).then(generated => {
-    const code = generated.output[0].code;
-    assert.true(!code.includes('// Description'));
-    assert.true(code.includes('taylorInvSqrt'));
-    assert.end();
-}).catch(err => {
-    assert.error(err);
-    assert.end();
-}));
+    const { output } = await bundle.generate({ format: 'es' });
+    const code = output[0].code;
 
-test('compressed | custom function', assert => rollup.rollup({
-    input: 'fixtures/basic.js',
-    plugins: [glslify({ compress: code => code + '\n\n// test custom function' })]
-}).then(bundle => bundle.generate({ format: 'es' })).then(generated => {
-    const code = generated.output[0].code;
-    assert.true(code.includes('// Description'));
-    assert.true(code.includes('taylorInvSqrt'));
-    assert.true(code.includes('// test custom function'));
-    assert.end();
-}).catch(err => {
-    assert.error(err);
-    assert.end();
-}));
+    t.is(!code.includes('// Description'), true);
+    t.is(code.includes('taylorInvSqrt'), true);
+});
 
-test('uncompressed', assert => rollup.rollup({
-    input: 'fixtures/basic.js',
-    plugins: [glslify({ compress: false })]
-}).then(bundle => bundle.generate({ format: 'es' })).then(generated => {
-    const code = generated.output[0].code;
-    assert.true(code.includes('// Description'));
-    assert.true(code.includes('taylorInvSqrt'));
-    assert.end();
-}).catch(err => {
-    assert.error(err);
-    assert.end();
-}));
+test('compressed | custom function', async t => {
+    const bundle = await rollup({
+        input: 'test/fixtures/basic.js',
+        plugins: [glslify({ compress: code => code + '\n\n// test custom function' })]
+    });
+
+    const { output } = await bundle.generate({ format: 'es' });
+    const code = output[0].code;
+
+    t.is(code.includes('// Description'), true);
+    t.is(code.includes('taylorInvSqrt'), true);
+    t.is(code.includes('// test custom function'), true);
+});
+
+test('uncompressed', async t => {
+    const bundle = await rollup({
+        input: 'test/fixtures/basic.js',
+        plugins: [glslify({ compress: false })]
+    });
+
+    const { output } = await bundle.generate({ format: 'es' });
+    const code = output[0].code;
+
+    t.is(code.includes('// Description'), true);
+    t.is(code.includes('taylorInvSqrt'), true);
+});

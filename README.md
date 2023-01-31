@@ -71,7 +71,7 @@ glslify(options)
 
 ## License
 
-Released under the [MIT license](LICENSE).
+[MIT](LICENSE)
 
 
 [npm]: https://img.shields.io/npm/v/rollup-plugin-glslify.svg

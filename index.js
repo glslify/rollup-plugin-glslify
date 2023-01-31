@@ -2,11 +2,9 @@
  * @author pschroen / https://ufo.ai/
  */
 
-'use strict';
-
-const { dirname } = require('path');
-const { createFilter } = require('rollup-pluginutils');
-const { compile } = require('glslify');
+import { dirname } from 'node:path';
+import { createFilter } from '@rollup/pluginutils';
+import { compile } from 'glslify';
 
 function compressShader(code) {
     // Based on https://github.com/vwochnik/rollup-plugin-glsl
@@ -29,7 +27,7 @@ function compressShader(code) {
     }, []).join('').replace(/\n+/g, '\n');
 }
 
-module.exports = function glslify(userOptions = {}) {
+export default function glslify(userOptions = {}) {
     const options = Object.assign(
         {
             include: [
@@ -47,7 +45,6 @@ module.exports = function glslify(userOptions = {}) {
 
     return {
         name: 'glslify',
-
         transform(code, id) {
             if (!filter(id)) return;
 
@@ -72,4 +69,4 @@ module.exports = function glslify(userOptions = {}) {
             };
         }
     };
-};
+}
