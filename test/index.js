@@ -42,3 +42,15 @@ test('uncompressed', async t => {
     t.is(code.includes('// Description'), true);
     t.is(code.includes('taylorInvSqrt'), true);
 });
+
+test('local module', async t => {
+    const bundle = await rollup({
+        input: 'test/fixtures/local.js',
+        plugins: [glslify({ compress: false })]
+    });
+
+    const { output } = await bundle.generate({ format: 'es' });
+    const code = output[0].code;
+
+    t.is(code.includes('myFunction'), true);
+});
